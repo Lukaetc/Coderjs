@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    background-image:url(/assets/imagenes/bg2.jpg) ;
+    padding: 90px 20px 0;
+    background-size: cover;
+
+}
+header{
+    background: transparent;
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+/*nav*/
+.nav {
+    display: flex;
+    justify-content: space-between;
+    max-width: 992px;
+    margin: 0 auto;
+}
+
+.logo{
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 80px;
+}
+
+.nav-link{
+    color: white;
+    text-decoration: none;
+}
+
+.nav-menu{
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+}
+
+.nav-menu-item{
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 80px;
+    text-transform: uppercase;
+    width: max-content;
+}
+
+.nav-menu-link{
+    padding: 8px 12px;
+    border-radius: 3px;
+
+}
+
+.nav-menu-link:hover{
+    background-color: #46034d;
+    transition: 0.5s;
+}
+
+
+
+/*main*/
+main{
+    text-align: center;
+    justify-content: space-between;
+}
+button {
+    background-color: #46034d;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+section {
+    text-align: center;
+}
+form{
+    color: #fff;
+}
+input[type=submit]{
+    background-color: #46034d;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer; 
+
+}
+
+.datos{
+    color: #fff;
+}
+
+
+/*contenido*/
+
+
+#coins{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+}
+
+#coins td, #customers th {
+    border: 3px solid #ddd;
+    padding: 12px;
+}
+
+#coins tr:nth-child(even){background-color: #f2f2f2;}
+
+#coins tr:hover {background-color: #ddd;}
+
+#coins th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #46034d;
+    color: white;
+}
+
+tr {
+    text-align: center;
+}
+
+table {
+    border-radius: 20px;
+}
