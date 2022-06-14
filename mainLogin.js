@@ -14,33 +14,45 @@ let password1 =document.querySelector("#password").value
 
 let flag=false
 
-const usuario1 = new usuario("lukaz", "luka1234");
-const enJSON    = JSON.stringify(usuario1);
-
-localStorage.setItem("usuario1", enJSON);
 //desestructuracion
 const { user, password} = usuario
 
 //defino el evento del boton
 miFormulario.addEventListener("submit",avanzar);
 
-//validar usuario
-function usuarioValido(){
+//usamos fetch para validar el usuario
+
+ async function usuarioValido(){
     user1 = document.querySelector("#usuario").value
     password1=document.querySelector("#password").value
-    console.log(user1);
-    console.log(password1);
 
-    //declaramos y asignamos condicionalmente
-    const valido =  (user1 ===usuario1.user && password1 === usuario1.password) ?  true : false;
-    //cambiamos el valor de flag para verificar si existe el usuario o no
-    valido ? flag = true : flag = false
+
+    await fetch('/data.json')
+   .then( (res) => res.json())
+   .then( (data) => {
+
+        data.forEach((usuarios) => {
+            let usuario1 = usuarios.nombre
+            console.log(usuario1)
+            let contraseña1 = usuarios.contraseña
+            console.log(contraseña1)
+
+            //declaramos y asignamos condicionalmente
+            const valido =  (user1 === usuario1 && password1 ===contraseña1) ?  true : false;
+            console.log(valido)
+
+            //cambiamos el valor de flag para verificar si existe el usuario o no
+            valido ? flag = true : flag = false
+            console.log(flag)
+       })
+    })
 }
 
+
 //funcion boton
-function avanzar(e){
+async function avanzar(e){
     e.preventDefault();
-    usuarioValido()
+    await usuarioValido()
     if (flag===true){
         window.location.replace("/profile.html");
     }else{ 
